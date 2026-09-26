@@ -1,315 +1,242 @@
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight,
+  Download,
+} from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#15171b] px-5 py-16 text-white sm:px-8 lg:px-12">
+    <section className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 md:py-24 lg:px-12 lg:py-28">
+      
+      {/* Decorative Background */}
+      <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#ef3b32]/5 blur-3xl" />
 
-      {/* Subtle border */}
-      <div className="absolute inset-0 border border-white/[0.03]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[350px] w-[350px] rounded-full bg-[#071827]/5 blur-3xl" />
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-8rem)] max-w-[1100px] items-center">
+      <div className="relative mx-auto max-w-7xl">
 
-        <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
+        <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
-          {/* =====================================================
-              LEFT CONTENT
-          ====================================================== */}
-          <div className="flex flex-col justify-center">
+          {/* ================= LEFT CONTENT ================= */}
+          <div>
 
-            {/* Label */}
-            <div className="mb-5">
-              <span className="border border-[#f47b20]/60 bg-[#f47b20]/10 px-2 py-1 text-[7px] font-semibold uppercase tracking-[0.12em] text-[#f47b20]">
+            {/* Small Label */}
+            <div className="mb-7 inline-flex items-center gap-3">
+              <span className="h-[1px] w-8 bg-[#ef3b32]" />
+
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ef3b32]">
                 Contact
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="max-w-[500px] text-[38px] font-black uppercase leading-[0.95] tracking-[-1px] sm:text-[48px] md:text-[52px]">
-
-              <span className="text-white">
-                Let's Build
-              </span>
-
+            <h2 className="max-w-xl text-5xl font-black uppercase leading-[0.95] tracking-[-0.04em] text-[#071827] sm:text-6xl md:text-7xl">
+              Let's Build
               <br />
 
-              <span className="text-[#f47b20]">
+              <span className="text-[#ef3b32]">
                 Together
               </span>
-
-              <span className="text-white">
-                .
-              </span>
-
+              <span className="text-[#071827]">.</span>
             </h2>
 
             {/* Description */}
-            <p className="mt-6 max-w-[475px] text-[10px] leading-[1.7] text-gray-400 sm:text-[11px]">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-500 sm:text-[15px]">
               Whether you are a founder exploring a permanent home for your
-              business, a sovereign wealth fund evaluating high-yield operating
-              assets, or a partner looking to collaborate across industrial and
-              consumer markets, our corporate development office is ready to
-              discuss the next move.
+              business, a partner looking to collaborate across industrial and
+              consumer markets, or an organization interested in working with
+              FNT Group, our corporate development office is ready to discuss
+              the next move.
             </p>
 
-            {/* Contact details */}
-            <div className="mt-7 space-y-4">
+            {/* Contact Information */}
+            <div className="mt-10 space-y-4">
 
               {/* Email */}
-              <div className="flex items-center gap-4">
-
-                <div className="flex h-5 w-5 items-center justify-center text-[#f47b20]">
-                  <Mail size={13} />
+              <div className="group flex items-center gap-5 border-b border-slate-200 pb-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-slate-200 transition duration-300 group-hover:border-[#ef3b32] group-hover:bg-[#ef3b32]">
+                  <Mail
+                    size={17}
+                    strokeWidth={1.8}
+                    className="text-[#ef3b32] transition group-hover:text-white"
+                  />
                 </div>
 
-                <a
-                  href="mailto:corporate@fntgroup.com"
-                  className="text-[9px] text-gray-400 transition hover:text-[#f47b20] sm:text-[10px]"
-                >
-                  corporate@fntgroup.com
-                </a>
+                <div>
+                  <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                    Email
+                  </p>
 
+                  <p className="text-sm font-medium text-[#071827]">
+                    corporate@fntgroup.com
+                  </p>
+                </div>
               </div>
 
               {/* Phone */}
-              <div className="flex items-center gap-4">
-
-                <div className="flex h-5 w-5 items-center justify-center text-[#f47b20]">
-                  <Phone size={13} />
+              <div className="group flex items-center gap-5 border-b border-slate-200 pb-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-slate-200 transition duration-300 group-hover:border-[#ef3b32] group-hover:bg-[#ef3b32]">
+                  <Phone
+                    size={17}
+                    strokeWidth={1.8}
+                    className="text-[#ef3b32] transition group-hover:text-white"
+                  />
                 </div>
 
-                <a
-                  href="tel:+8225550198"
-                  className="text-[9px] text-gray-400 transition hover:text-[#f47b20] sm:text-[10px]"
-                >
-                  +82 2 555 0198
-                </a>
+                <div>
+                  <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                    Phone
+                  </p>
 
+                  <p className="text-sm font-medium text-[#071827]">
+                    +82 2 555 0198
+                  </p>
+                </div>
               </div>
 
-              {/* Address */}
-              <div className="flex items-center gap-4">
-
-                <div className="flex h-5 w-5 items-center justify-center text-[#f47b20]">
-                  <MapPin size={13} />
+              {/* Location */}
+              <div className="group flex items-center gap-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-slate-200 transition duration-300 group-hover:border-[#ef3b32] group-hover:bg-[#ef3b32]">
+                  <MapPin
+                    size={17}
+                    strokeWidth={1.8}
+                    className="text-[#ef3b32] transition group-hover:text-white"
+                  />
                 </div>
 
-                <span className="text-[9px] text-gray-400 sm:text-[10px]">
-                  24 Teheran-ro 87-gil, Gangnam-gu, Seoul
-                </span>
+                <div>
+                  <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                    Office
+                  </p>
 
+                  <p className="text-sm font-medium text-[#071827]">
+                    FNT Group, India
+                  </p>
+                </div>
               </div>
 
             </div>
 
           </div>
 
-          {/* =====================================================
-              RIGHT FORM
-          ====================================================== */}
-          <div className="border border-white/[0.08] bg-[#090b0d] p-5 sm:p-6 md:p-7">
 
-            {/* Form header */}
-            <div className="mb-5">
+          {/* ================= RIGHT FORM ================= */}
+          <div className="relative">
 
-              <p className="text-[7px] font-semibold uppercase tracking-[0.15em] text-[#f47b20]">
-                Send a Message
-              </p>
+            {/* Red accent */}
+            <div className="absolute -left-2 -top-2 h-12 w-12 border-l-2 border-t-2 border-[#ef3b32]" />
 
-              <h3 className="mt-2 text-[22px] font-black uppercase leading-none tracking-[-0.5px] sm:text-[25px]">
-                Start a Conversation
-              </h3>
+            <div className="relative border border-slate-200 bg-[#f8f9fa] p-6 shadow-[0_20px_60px_rgba(7,24,39,0.08)] sm:p-8 md:p-10">
+
+              {/* Form Header */}
+              <div className="mb-8">
+                <p className="mb-3 text-[9px] font-bold uppercase tracking-[0.25em] text-[#ef3b32]">
+                  Send a Message
+                </p>
+
+                <h3 className="text-3xl font-black uppercase tracking-[-0.03em] text-[#071827] sm:text-4xl">
+                  Start a Conversation
+                </h3>
+
+                <div className="mt-4 h-[2px] w-12 bg-[#ef3b32]" />
+              </div>
+
+
+              <form className="space-y-6">
+
+                {/* Name + Email */}
+                <div className="grid gap-5 sm:grid-cols-2">
+
+                  <div>
+                    <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#071827]">
+                      Name
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="Your full name"
+                      className="h-12 w-full border border-slate-200 bg-white px-4 text-sm text-[#071827] outline-none transition placeholder:text-slate-400 focus:border-[#ef3b32] focus:ring-1 focus:ring-[#ef3b32]/20"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#071827]">
+                      Email
+                    </label>
+
+                    <input
+                      type="email"
+                      placeholder="name@company.com"
+                      className="h-12 w-full border border-slate-200 bg-white px-4 text-sm text-[#071827] outline-none transition placeholder:text-slate-400 focus:border-[#ef3b32] focus:ring-1 focus:ring-[#ef3b32]/20"
+                    />
+                  </div>
+
+                </div>
+
+
+                {/* Company */}
+                <div>
+                  <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#071827]">
+                    Company
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Company or organization"
+                    className="h-12 w-full border border-slate-200 bg-white px-4 text-sm text-[#071827] outline-none transition placeholder:text-slate-400 focus:border-[#ef3b32] focus:ring-1 focus:ring-[#ef3b32]/20"
+                  />
+                </div>
+
+
+                {/* Message */}
+                <div>
+                  <label className="mb-2 block text-[9px] font-bold uppercase tracking-[0.18em] text-[#071827]">
+                    Message
+                  </label>
+
+                  <textarea
+                    rows="6"
+                    placeholder="Tell us about your business, your goals, or the opportunity you want to discuss."
+                    className="w-full resize-none border border-slate-200 bg-white px-4 py-4 text-sm leading-6 text-[#071827] outline-none transition placeholder:text-slate-400 focus:border-[#ef3b32] focus:ring-1 focus:ring-[#ef3b32]/20"
+                  />
+                </div>
+
+
+                {/* Buttons */}
+                <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+
+                  <button
+                    type="submit"
+                    className="group flex h-12 items-center justify-center gap-3 bg-[#ef3b32] px-7 text-[10px] font-bold uppercase tracking-wide text-white transition duration-300 hover:bg-[#071827]"
+                  >
+                    Send Message
+
+                    <ArrowRight
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    className="group flex h-12 items-center justify-center gap-3 border border-slate-300 bg-white px-6 text-[10px] font-bold uppercase tracking-wide text-[#071827] transition duration-300 hover:border-[#071827] hover:bg-[#071827] hover:text-white"
+                  >
+                    <Download size={14} />
+
+                    Download Acquisition Brief
+                  </button>
+
+                </div>
+
+              </form>
 
             </div>
-
-            <form className="space-y-4">
-
-              {/* Name + Email */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-[6px] font-semibold uppercase tracking-[0.15em] text-gray-500"
-                  >
-                    Name
-                  </label>
-
-                  <input
-                    id="name"
-                    type="text"
-                    placeholder="Your full name"
-                    className="
-                      h-9
-                      w-full
-                      border
-                      border-white/[0.07]
-                      bg-[#17191e]
-                      px-3
-                      text-[9px]
-                      text-white
-                      outline-none
-                      placeholder:text-gray-600
-                      focus:border-[#f47b20]/60
-                    "
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-[6px] font-semibold uppercase tracking-[0.15em] text-gray-500"
-                  >
-                    Email
-                  </label>
-
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="name@company.com"
-                    className="
-                      h-9
-                      w-full
-                      border
-                      border-white/[0.07]
-                      bg-[#17191e]
-                      px-3
-                      text-[9px]
-                      text-white
-                      outline-none
-                      placeholder:text-gray-600
-                      focus:border-[#f47b20]/60
-                    "
-                  />
-                </div>
-
-              </div>
-
-              {/* Company */}
-              <div>
-                <label
-                  htmlFor="company"
-                  className="mb-2 block text-[6px] font-semibold uppercase tracking-[0.15em] text-gray-500"
-                >
-                  Company
-                </label>
-
-                <input
-                  id="company"
-                  type="text"
-                  placeholder="Company or organization"
-                  className="
-                    h-9
-                    w-full
-                    border
-                    border-white/[0.07]
-                    bg-[#17191e]
-                    px-3
-                    text-[9px]
-                    text-white
-                    outline-none
-                    placeholder:text-gray-600
-                    focus:border-[#f47b20]/60
-                  "
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-[6px] font-semibold uppercase tracking-[0.15em] text-gray-500"
-                >
-                  Message
-                </label>
-
-                <textarea
-                  id="message"
-                  rows="5"
-                  placeholder="Tell us about your business, your goals, or the opportunity you want to discuss."
-                  className="
-                    w-full
-                    resize-none
-                    border
-                    border-white/[0.07]
-                    bg-[#17191e]
-                    px-3
-                    py-3
-                    text-[9px]
-                    leading-5
-                    text-white
-                    outline-none
-                    placeholder:text-gray-600
-                    focus:border-[#f47b20]/60
-                  "
-                />
-              </div>
-
-              {/* Buttons */}
-              <div className="flex flex-col gap-3 pt-1 sm:flex-row">
-
-                <button
-                  type="submit"
-                  className="
-                    group
-                    flex
-                    h-9
-                    items-center
-                    justify-center
-                    gap-2
-                    bg-[#f47b20]
-                    px-5
-                    text-[8px]
-                    font-bold
-                    uppercase
-                    tracking-wide
-                    text-black
-                    transition
-                    duration-300
-                    hover:bg-[#ff8c32]
-                  "
-                >
-                  Send Message
-
-                  <ArrowRight
-                    size={12}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </button>
-
-                <button
-                  type="button"
-                  className="
-                    flex
-                    h-9
-                    items-center
-                    justify-center
-                    border
-                    border-white/[0.12]
-                    bg-[#15171b]
-                    px-5
-                    text-[8px]
-                    font-bold
-                    uppercase
-                    tracking-wide
-                    text-white
-                    transition
-                    duration-300
-                    hover:border-[#f47b20]/50
-                    hover:bg-white/[0.03]
-                  "
-                >
-                  Download Acquisition Brief
-                </button>
-
-              </div>
-
-            </form>
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }
