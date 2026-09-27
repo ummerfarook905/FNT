@@ -101,31 +101,6 @@ export default function Footer() {
               info@fntgroup.com
             </a>
 
-            <div className="mt-5 flex gap-5">
-
-              <a
-                href="#"
-                className="text-[14px] text-gray-300 hover:text-[#ef3b32]"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="#"
-                className="text-[14px] text-gray-300 hover:text-[#ef3b32]"
-              >
-                YouTube
-              </a>
-
-              <a
-                href="#"
-                className="text-[14px] text-gray-300 hover:text-[#ef3b32]"
-              >
-                Instagram
-              </a>
-
-            </div>
-
           </div>
 
         </div>
@@ -145,7 +120,6 @@ export default function Footer() {
           <div className="flex justify-center gap-4">
 
             <a
-              href="#"
               className="text-[9px] text-gray-400 hover:text-white"
             >
               Privacy Policy
@@ -154,7 +128,6 @@ export default function Footer() {
             <span className="text-gray-600">|</span>
 
             <a
-              href="#"
               className="text-[9px] text-gray-400 hover:text-white"
             >
               Terms of Use

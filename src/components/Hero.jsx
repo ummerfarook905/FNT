@@ -67,9 +67,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Red Diagonal Line */}
-      <div className="pointer-events-none absolute bottom-0 left-[38%] z-10 hidden h-[260px] w-[2px] origin-bottom rotate-[31deg] bg-[#ef3b32] md:block" />
-
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 right-6 z-20 hidden flex-col items-center gap-3 sm:right-10 md:flex">
 

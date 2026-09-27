@@ -219,15 +219,6 @@ export default function ContactSection() {
                     />
                   </button>
 
-                  <button
-                    type="button"
-                    className="group flex h-12 items-center justify-center gap-3 border border-slate-300 bg-white px-6 text-[10px] font-bold uppercase tracking-wide text-[#071827] transition duration-300 hover:border-[#071827] hover:bg-[#071827] hover:text-white"
-                  >
-                    <Download size={14} />
-
-                    Download Acquisition Brief
-                  </button>
-
                 </div>
 
               </form>
