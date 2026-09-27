@@ -6,9 +6,13 @@ import GlobalPresence from "./components/GlobalPresence";
 import ContactSection from "./components/ContactSection";
 import MainLayout from "./layout/MainLayout";
 
+// GitHub Pages serves the app from a sub-path, so the router has to be told
+// to strip that prefix before matching routes.
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         {/* Shared Layout */}
         <Route element={<MainLayout />}>

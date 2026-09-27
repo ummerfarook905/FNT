@@ -5,6 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fnt</title>
+    <script>
+      // GitHub Pages has no SPA fallback, so a hard load of /FNT/about is
+      // answered with 404.html. Park the requested path here and bounce back
+      // to the entry point; main.jsx restores it before React Router reads it.
+      (function () {
+        var base = "/FNT/";
+        var path = window.location.pathname;
+
+        if (path.indexOf(base) !== 0) return;
+
+        var rest = path.slice(base.length);
+        if (!rest || rest === "index.html") return;
+
+        try {
+          sessionStorage.setItem("fnt:redirect", "/" + rest);
+        } catch (error) {
+          /* private mode: fall through, the app still boots */
+        }
+
+        window.location.replace(base);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

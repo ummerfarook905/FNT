@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
   { name: "HOME", path: "/" },
@@ -12,7 +13,10 @@ const navItems = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-   const isHomePage = location.pathname === "/";
+  // Read the path from the router, not global `location`, so the transparent
+  // navbar only applies on the home route and stays correct after navigation.
+  const { pathname } = useLocation();
+  const isHomePage = pathname === "/";
 
   // ================= SCROLL DETECTION =================
   useEffect(() => {
@@ -74,22 +78,27 @@ export default function Navbar() {
 
         {/* ================= LOGO ================= */}
 
-        <a
-          href="/"
+        <Link
+          to="/"
           className="relative z-30 flex shrink-0 items-center"
+          aria-label="FNT Group home"
         >
-          <img
-            src="/logo.png"
-            alt="FNT Group"
-            className="
-              h-10
-              w-auto
-              object-contain
-              sm:h-12
-              lg:h-13
-            "
-          />
-        </a>
+          {/* Wordmark: there is no logo.png in the repo, and a plain text mark
+              matches the one used in the footer. */}
+          <span className="flex items-baseline leading-none">
+            <span className="text-[28px] font-black italic tracking-[-3px] text-white sm:text-[32px]">
+              F
+            </span>
+
+            <span className="text-[28px] font-black italic tracking-[-2px] text-white sm:text-[32px]">
+              NT
+            </span>
+          </span>
+
+          <span className="ml-2 text-[7px] font-bold tracking-[0.3em] text-white/70 sm:text-[8px]">
+            GROUP
+          </span>
+        </Link>
 
 
         {/* ================================================= */}
@@ -111,9 +120,9 @@ export default function Navbar() {
           <div className="flex h-full items-center gap-7 xl:gap-9">
 
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 className="
                   flex
                   h-full
@@ -130,7 +139,7 @@ export default function Navbar() {
                 "
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
 
           </div>
@@ -187,9 +196,9 @@ export default function Navbar() {
           <div className="flex flex-col">
 
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 onClick={() => setMenuOpen(false)}
                 className={`
                   border-b
@@ -208,7 +217,7 @@ export default function Navbar() {
                 `}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
 
           </div>

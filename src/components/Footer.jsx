@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-[#001421] text-white">
@@ -9,7 +11,7 @@ export default function Footer() {
 
           {/* BRAND */}
           <div>
-            <a href="/" className="inline-block">
+            <Link to="/" className="inline-block">
 
               <div className="flex items-center">
 
@@ -27,7 +29,7 @@ export default function Footer() {
                 GROUP
               </div>
 
-            </a>
+            </Link>
 
             <p className="mt-5 text-[13px] leading-5 text-gray-300">
               Industrial Excellence.
@@ -46,33 +48,33 @@ export default function Footer() {
 
             <nav className="flex flex-col gap-3">
 
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="text-[14px] text-gray-300 transition hover:text-[#ef3b32]"
               >
                 About
-              </a>
+              </Link>
 
-              <a
-                href="/businesses"
+              <Link
+                to="/businesses"
                 className="text-[14px] text-gray-300 transition hover:text-[#ef3b32]"
               >
                 Businesses
-              </a>
+              </Link>
 
-              <a
-                href="/global"
+              <Link
+                to="/global"
                 className="text-[14px] text-gray-300 transition hover:text-[#ef3b32]"
               >
                 Global Presence
-              </a>
+              </Link>
 
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="text-[14px] text-gray-300 transition hover:text-[#ef3b32]"
               >
                 Contact
-              </a>
+              </Link>
 
             </nav>
 
