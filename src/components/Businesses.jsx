@@ -805,7 +805,7 @@ function ProductPopup({
 // BUSINESS CARD
 // ============================================================
 
-function BusinessCard({ business }) {
+function BusinessCard({ business, onPopupOpen, onPopupClose }) {
   const buttonRef = useRef(null);
 
   const closeTimer = useRef(null);
@@ -835,6 +835,7 @@ function BusinessCard({ business }) {
     setButtonRect(rect);
 
     setShowPopup(true);
+    onPopupOpen();
   };
 
   // ==========================================================
@@ -848,6 +849,7 @@ function BusinessCard({ business }) {
 
     closeTimer.current = setTimeout(() => {
       setShowPopup(false);
+      onPopupClose();
     }, 180);
   };
 
@@ -1473,6 +1475,7 @@ function BusinessCard({ business }) {
           onMouseLeave={closePopup}
           onClose={() => {
             setShowPopup(false);
+            onPopupClose();
           }}
         />
       )}
@@ -1485,6 +1488,8 @@ function BusinessCard({ business }) {
 // ============================================================
 
 export default function Businesses() {
+  const [popupOpen, setPopupOpen] = useState(false);
+
   return (
     <section
       id="businesses"
@@ -1834,14 +1839,27 @@ export default function Businesses() {
           xl:gap-[clamp(24px,2.2vw,40px)]
         "
       >
-        {businesses.map(
-          (business, index) => (
+        {businesses.map((business, index) => (
+          <div
+            key={`${business.name}-${index}`}
+            className={`
+              transition-all
+              duration-500
+              ease-out
+              ${
+                popupOpen
+                  ? "blur-[6px] opacity-40 scale-[0.98]"
+                  : "blur-0 opacity-100 scale-100"
+              }
+            `}
+          >
             <BusinessCard
-              key={`${business.name}-${index}`}
               business={business}
+              onPopupOpen={() => setPopupOpen(true)}
+              onPopupClose={() => setPopupOpen(false)}
             />
-          )
-        )}
+          </div>
+        ))}
       </div>
     </section>
   );
